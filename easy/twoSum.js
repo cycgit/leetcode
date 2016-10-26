@@ -21,18 +21,14 @@ var twoSum = function(nums, target) {
   var searchMap = []
   var searchTarget = 0
   for(var i = 0; i< nums.length; i++ ){
-      searchTarget = target - nums[i]
-      searchMap = nums.slice(i + 1)
-      var flag = searchMap.indexOf(searchTarget)
-      if(flag != -1) {
-        return [i, i+flag+1]
-      }
-
+    searchTarget = target - nums[i]
+    searchMap = nums.slice(i + 1)
+    var flag = searchMap.indexOf(searchTarget)
+    if(flag != -1) {
+      return [i, i+flag+1]
+    }
   }
-
   return [0, 0]
-
 };
 
-console.log(twoSum([0,2,4,0],0))
 
