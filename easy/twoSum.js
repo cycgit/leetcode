@@ -18,18 +18,21 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-  var left = 0
-  var right = 0
+  var searchMap = []
+  var searchTarget = 0
   for(var i = 0; i< nums.length; i++ ){
-    left = i
-    if(nums[left] <= target) {
-      continue
-    } else {
-      var diff = target - nums[left]
-    }
+      searchTarget = target - nums[i]
+      searchMap = nums.slice(i + 1)
+      var flag = searchMap.indexOf(searchTarget)
+      if(flag != -1) {
+        return [i, i+flag+1]
+      }
+
   }
 
+  return [0, 0]
 
 };
 
-console.log(twoSum([2, 7, 11, 15], 9))
+console.log(twoSum([0,2,4,0],0))
+
